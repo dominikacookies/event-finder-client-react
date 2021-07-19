@@ -1,10 +1,18 @@
 import "./App.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import SearchBar from "./components/SearchBar";
 
 const App = () => {
   return (
-    <div>
-      <h1>My App Goes Here</h1>
-    </div>
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/">
+            <SearchBar />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 };
 
