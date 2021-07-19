@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import SearchBar from "./components/SearchBar";
+import Homepage from "./pages/Homepage";
 
 const App = () => {
   return (
@@ -8,7 +8,7 @@ const App = () => {
       <div>
         <Switch>
           <Route path="/">
-            <SearchBar />
+            <Homepage />
           </Route>
         </Switch>
       </div>

@@ -1,35 +1,56 @@
+import { useState } from "react";
+
 const SearchBar = () => {
+  const [cityName, setCityName] = useState();
+  const [genre, setGenre] = useState();
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+
+    const cityName = document.getElementById("cityName").value;
+    const genre = document.getElementById("genre").value;
+
+    setCityName(cityName);
+    setGenre(genre);
+  };
+
   return (
-    <div>
+    <form onSubmit={onSubmit}>
       <div class="row g-2">
         <div class="col-md">
           <div class="form-floating">
             <input
-              type="email"
+              type="input"
               class="form-control"
-              id="floatingInputGrid"
-              placeholder="name@example.com"
+              id="cityName"
+              placeholder="City"
             />
-            <label for="floatingInputGrid">Email address</label>
+            <label for="floatingInputGrid">Enter a city...</label>
           </div>
         </div>
         <div class="col-md">
           <div class="form-floating">
             <select
               class="form-select"
-              id="floatingSelectGrid"
+              id="genre"
               aria-label="Floating label select example"
             >
-              <option selected>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              <option value="Music">Music</option>
+              <option value="Sport">Sports</option>
+              <option value="Family">Family</option>
+              <option value="Theatre">Theatre</option>
+              <option value="Comedy">Comedy</option>
             </select>
-            <label for="floatingSelectGrid">Works with selects</label>
+            <label for="floatingSelectGrid">Event Type</label>
           </div>
         </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-3">
+            Search
+          </button>
+        </div>
       </div>
-    </div>
+    </form>
   );
 };
 
