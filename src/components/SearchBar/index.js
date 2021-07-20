@@ -1,19 +1,4 @@
-import { useState } from "react";
-
-const SearchBar = () => {
-  const [cityName, setCityName] = useState();
-  const [genre, setGenre] = useState();
-
-  const onSubmit = (event) => {
-    event.preventDefault();
-
-    const cityName = document.getElementById("cityName").value;
-    const genre = document.getElementById("genre").value;
-
-    setCityName(cityName);
-    setGenre(genre);
-  };
-
+const SearchBar = ({ onSubmit }) => {
   return (
     <form onSubmit={onSubmit}>
       <div class="row g-2">

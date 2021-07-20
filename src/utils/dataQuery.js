@@ -1,27 +1,12 @@
 import { gql } from "@apollo/client";
 
 const dataQuery = gql`
-  query DashboardQuery {
-    followers(username: "leefarnell") {
-      username
-      profileImageUrl
-      githubUrl
-    }
-    user(username: "leefarnell") {
-      username
-      bio
+  query EventQuery {
+    events(classificationName: "music", page: 1, city: "London") {
       name
-      githubUrl
-      profileImageUrl
-      followers
-      following
-      company
-      email
-      twitterUsername
-      publicGists
-      publicRepos
+      url
     }
   }
 `;
 
-export default dataQuery;
+// export default dataQuery;

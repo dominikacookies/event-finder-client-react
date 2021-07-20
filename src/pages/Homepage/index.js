@@ -1,15 +1,41 @@
-import { useQuery } from "@apollo/client";
+import { useState } from "react";
+import { useQuery, gql } from "@apollo/client";
+
 import "./Homepage.css";
+
 import SearchBar from "../../components/SearchBar";
-import dataQuery from "../../utils/dataQuery";
+// import dataQuery from "../../utils/dataQuery";
 
 const Homepage = () => {
+  const [cityName, setCityName] = useState();
+  const [genre, setGenre] = useState();
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+
+    const cityName = document.getElementById("cityName").value;
+    const genre = document.getElementById("genre").value;
+
+    setCityName(cityName);
+    setGenre(genre);
+  };
+
+  const dataQuery = gql`
+    query EventQuery {
+      events(classificationName: "music", page: 1, city: "London") {
+        name
+        url
+      }
+    }
+  `;
   const { loading, error, data } = useQuery(dataQuery);
+
+  console.log(data);
 
   return (
     <div className="d-flex justify-content-center align-items-center homepage">
       <div>
-        <SearchBar />
+        <SearchBar onSubmit={onSubmit} />
       </div>
     </div>
   );
