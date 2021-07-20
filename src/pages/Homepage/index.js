@@ -21,13 +21,14 @@ const Homepage = () => {
   };
 
   const dataQuery = gql`
-    query EventQuery {
-      events(classificationName: "music", page: 1, city: "London") {
-        name
-        url
-      }
+  query EventQuery {
+    events(classificationName: "${genre}", page: 1, city: "${cityName}") {
+      name
+      url
     }
-  `;
+  }
+`;
+
   const { loading, error, data } = useQuery(dataQuery);
 
   console.log(data);
