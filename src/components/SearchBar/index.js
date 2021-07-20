@@ -1,22 +1,22 @@
 const SearchBar = ({ onSubmit }) => {
   return (
     <form onSubmit={onSubmit}>
-      <div class="row g-2">
-        <div class="col-md">
-          <div class="form-floating">
+      <div className="row g-2">
+        <div className="col-md">
+          <div className="form-floating">
             <input
               type="input"
-              class="form-control"
+              className="form-control"
               id="cityName"
               placeholder="City"
             />
             <label for="floatingInputGrid">Enter a city...</label>
           </div>
         </div>
-        <div class="col-md">
-          <div class="form-floating">
+        <div className="col-md">
+          <div className="form-floating">
             <select
-              class="form-select"
+              className="form-select"
               id="genre"
               aria-label="Floating label select example"
             >
@@ -29,8 +29,8 @@ const SearchBar = ({ onSubmit }) => {
             <label for="floatingSelectGrid">Event Type</label>
           </div>
         </div>
-        <div class="col-auto">
-          <button type="submit" class="btn btn-primary mb-3">
+        <div className="col-auto">
+          <button type="submit" className="btn btn-primary mb-3">
             Search
           </button>
         </div>
