@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useQuery, gql } from "@apollo/client";
+import $ from "jquery";
 
 import "./Homepage.css";
 
@@ -16,6 +17,14 @@ const Homepage = () => {
 
     const cityName = document.getElementById("cityName").value;
     const genre = document.getElementById("genre").value;
+
+    if (cityName === "") {
+      $(".error-text").remove();
+      $(event.target).append(`
+      <p class="error-text"> Please enter a city name to search. </p>
+      `);
+      return;
+    }
 
     setCityName(cityName);
     setGenre(genre);

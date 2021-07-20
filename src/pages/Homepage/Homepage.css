@@ -2,3 +2,7 @@
   background-color: black;
   height: 100vh;
 }
+
+.error-text {
+  color: white;
+}
