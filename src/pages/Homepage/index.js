@@ -26,7 +26,7 @@ const Homepage = () => {
 
   return (
     <div className="homepage">
-      <div>
+      <div className="center-div">
         <SearchBar onSubmit={onSubmit} />
       </div>
     </div>
