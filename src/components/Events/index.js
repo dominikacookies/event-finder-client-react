@@ -2,7 +2,7 @@ import EventCard from "./EventCard";
 
 const Events = ({ events }) => {
   return (
-    <div>
+    <div className="cards-container">
       <div className="d-flex flex-wrap justify-content-between">
         {events
           .map((event) => {
